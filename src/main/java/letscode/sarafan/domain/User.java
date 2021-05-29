@@ -1,5 +1,7 @@
 package letscode.sarafan.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -72,6 +74,7 @@ public class User {
 
     private String gender;
     private String locale;
-    private LocalDateTime lastVisit;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime lastVisit;
 }
